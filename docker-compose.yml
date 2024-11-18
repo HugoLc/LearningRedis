@@ -1,0 +1,23 @@
+services:
+  aspnet:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: aspnet
+    ports:
+      - "5000:80"
+      - "5001:443"
+    environment:
+      - ASPNETCORE_ENVIROMENT=Development
+      - REDIS_HOST=redis
+      - REDIS_PORT= 6379
+    volumes:
+      - .:/src
+    depends_on:
+      - redis
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - 6379:6379
+

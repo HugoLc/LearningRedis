@@ -1,0 +1,6 @@
+@LearningRedis_HostAddress = http://localhost:5282
+
+GET {{LearningRedis_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
